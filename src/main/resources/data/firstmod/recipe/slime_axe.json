@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "SS",
+    "ST",
+    " T"
+  ],
+  "key": {
+    "S": "firstmod:super_slime",
+    "T": "minecraft:stick"
+  },
+  "result": {
+    "id": "firstmod:slime_axe",
+    "count": 1
+  }
+}

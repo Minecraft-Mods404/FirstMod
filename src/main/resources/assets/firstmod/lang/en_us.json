@@ -1,0 +1,17 @@
+{
+  "item.firstmod.super_slime": "Super Slime",
+  "item.firstmod.explosive_slime": "Explosive Slime",
+  "item.firstmod.slime_sword": "Slime Sword",
+  "item.firstmod.slime_axe": "Slime Axe",
+  "item.firstmod.slime_pickaxe": "Slime Pickaxe",
+  "item.firstmod.slime_shovel": "Slime Shovel",
+  "item.firstmod.slime_hoe": "Slime Hoe",
+  "item.firstmod.slime_helmet": "Slime Helmet",
+  "item.firstmod.slime_chestplate": "Slime Chestplate",
+  "item.firstmod.slime_leggings": "Slime Leggings",
+  "item.firstmod.slime_boots": "Slime Boots",
+  "effect.firstmod.knockback_resist": "Knockback Resist",
+  "effect.firstmod.slime_luck": "Slime Luck",
+  "effect.firstmod.sticky": "Sticky",
+  "item.minecraft.potion.effect.slime_potion": "Potion of Slime Luck"
+}

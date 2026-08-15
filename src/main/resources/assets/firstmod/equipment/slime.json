@@ -1,0 +1,7 @@
+{
+  "layers": {
+    "humanoid": [{ "texture":  "firstmod:slime" }],
+    "humanoid_leggings": [{ "texture": "firstmod:slime" }],
+    "wings": [{ "texture": "firstmod:slime" }]
+  }
+}

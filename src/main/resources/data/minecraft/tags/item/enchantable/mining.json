@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "firstmod:slime_axe",
+    "firstmod:slime_pickaxe",
+    "firstmod:slime_shovel",
+    "firstmod:slime_hoe"
+  ]
+}
