@@ -1,0 +1,18 @@
+{
+  "parent": "firstmod:slimy_misfortune",
+  "display": {
+    "icon": { "id": "firstmod:super_slime" },
+    "title": { "translate": "advancements.firstmod.rain.title" },
+    "description": { "translate": "advancements.firstmod.rain.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "survived": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [["survived"]]
+}

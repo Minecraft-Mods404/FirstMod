@@ -1,0 +1,29 @@
+{
+  "parent": "firstmod:end_battery",
+  "display": {
+    "icon": {
+      "id": "firstmod:slime_scythe"
+    },
+    "title": {
+      "translate": "advancements.firstmod.scythe.title"
+    },
+    "description": {
+      "translate": "advancements.firstmod.scythe.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "firstmod:slime_scythe"
+      }
+    }
+  },
+  "requirements": [
+    ["crafted"]
+  ]
+}

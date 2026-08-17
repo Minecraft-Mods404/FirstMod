@@ -1,17 +1,54 @@
 {
   "item.firstmod.super_slime": "Super Slime",
   "item.firstmod.explosive_slime": "Explosive Slime",
+  "item.firstmod.explosive_slime_stick": "Explosive Slime Stick",
+  "item.firstmod.end_battery": "End Battery",
+
   "item.firstmod.slime_sword": "Slime Sword",
+  "item.firstmod.slime_scythe": "\u00a7cSlime Scythe",
   "item.firstmod.slime_axe": "Slime Axe",
   "item.firstmod.slime_pickaxe": "Slime Pickaxe",
   "item.firstmod.slime_shovel": "Slime Shovel",
   "item.firstmod.slime_hoe": "Slime Hoe",
+
   "item.firstmod.slime_helmet": "Slime Helmet",
   "item.firstmod.slime_chestplate": "Slime Chestplate",
   "item.firstmod.slime_leggings": "Slime Leggings",
   "item.firstmod.slime_boots": "Slime Boots",
+  "item.firstmod.slime_horse_armor": "Slime Horse Armor",
+
+  "item.firstmod.slime_grenade": "Slime Grenade",
+  "item.firstmod.slime_mega_grenade": "Mega Slime Grenade",
+
   "effect.firstmod.knockback_resist": "Knockback Resist",
   "effect.firstmod.slime_luck": "Slime Luck",
   "effect.firstmod.sticky": "Sticky",
-  "item.minecraft.potion.effect.slime_potion": "Potion of Slime Luck"
+  "effect.firstmod.very_sticky": "Very Sticky",
+
+  "item.minecraft.potion.effect.slime_potion": "Potion of Slime Luck",
+  "item.minecraft.potion.effect.slimy_misfortune": "Potion of Slimy Misfortune",
+
+  "itemGroup.firstmod.slime": "Slime",
+
+  "entity.firstmod.prince_slime": "Prince Slime",
+  "entity.firstmod.king_slime": "King Slime",
+
+  "advancements.firstmod.root.title": "Slime... but Better.",
+  "advancements.firstmod.root.description": "Obtain Super Slime",
+  "advancements.firstmod.armor.title": "So... Gooey...",
+  "advancements.firstmod.armor.description": "Collect a full set of slime armor",
+  "advancements.firstmod.grenade.title": "TNT... but better",
+  "advancements.firstmod.grenade.description": "Craft a batch of slime grenades",
+  "advancements.firstmod.end_battery.title": "The Energy of the Future",
+  "advancements.firstmod.end_battery.description": "Craft an End Battery",
+  "advancements.firstmod.scythe.title": "Don't let the Slimes have this!",
+  "advancements.firstmod.scythe.description": "Craft the Slime Scythe",
+  "advancements.firstmod.mega_grenade.title": "Throwable Death Ball",
+  "advancements.firstmod.mega_grenade.description": "Craft a batch of slime mega grenades",
+  "advancements.firstmod.misfortune.title": "Drinking Your Demise",
+  "advancements.firstmod.misfortune.description": "Drink a Potion of Slimy Misfortune",
+  "advancements.firstmod.survive.title": "Surviving Your Demise",
+  "advancements.firstmod.survive.description": "Survive a Potion of Slimy Misfortune",
+  "advancements.firstmod.rain.title": "So... Very... Gooey...",
+  "advancements.firstmod.rain.description": "Be alive when a slime rain ends"
 }
