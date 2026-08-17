@@ -9,5 +9,11 @@ pluginManagement {
 	}
 }
 
+// Lets Gradle download the JDK required by the java.toolchain block in
+// build.gradle if it isn't already installed locally.
+plugins {
+	id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
 // Should match your modid
 rootProject.name = 'firstmod'

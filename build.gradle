@@ -50,8 +50,13 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_25
-	targetCompatibility = JavaVersion.VERSION_25
+	// Pins the JDK used to compile and run this mod, independent of whatever
+	// JAVA_HOME happens to be. Gradle will locate a matching local JDK or
+	// download one (see the foojay resolver in settings.gradle), so the build
+	// behaves the same from the terminal, from VS Code, and in CI.
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
 }
 
 jar {
