@@ -1,0 +1,29 @@
+{
+  "parent": "firstmod:nether_battery",
+  "display": {
+    "icon": {
+      "id": "firstmod:nether_scythe"
+    },
+    "title": {
+      "translate": "advancements.firstmod.nether_scythe.title"
+    },
+    "description": {
+      "translate": "advancements.firstmod.nether_scythe.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "firstmod:nether_scythe"
+      }
+    }
+  },
+  "requirements": [
+    ["crafted"]
+  ]
+}

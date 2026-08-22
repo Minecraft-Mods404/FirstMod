@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "RNR",
+    "RSR",
+    "RRR"
+  ],
+  "key": {
+    "R": "minecraft:reinforced_deepslate",
+    "N": "minecraft:netherite_block",
+    "S": "minecraft:nether_star"
+  },
+  "result": {
+    "id": "firstmod:nether_battery",
+    "count": 1
+  }
+}

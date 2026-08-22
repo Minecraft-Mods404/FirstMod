@@ -12,6 +12,7 @@ public class FirstModClient implements ClientModInitializer {
 		EntityRendererRegistry.register(FirstMod.SLIME_GRENADE_ENTITY, ThrownItemRenderer::new);
 		EntityRendererRegistry.register(FirstMod.SLIME_MEGA_GRENADE_ENTITY, ThrownItemRenderer::new);
 		EntityRendererRegistry.register(FirstMod.PRINCE_SLIME, SlimeRenderer::new);
-		EntityRendererRegistry.register(FirstMod.KING_SLIME, SlimeRenderer::new);
+		EntityRendererRegistry.register(FirstMod.KING_SLIME, SlimeRenderer::new);		
+		EntityRendererRegistry.register(FirstMod.EXPLOSIVE_SLIME_CUBE, ExplosiveSlimeRenderer::new);
 	}
 }

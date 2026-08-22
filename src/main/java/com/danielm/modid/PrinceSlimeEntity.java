@@ -83,7 +83,7 @@ public class PrinceSlimeEntity extends Slime {
 
     // ─── death: 3 large slimes, 5-10 super slime ───
 
-    @Override
+        @Override
     public void remove(final Entity.RemovalReason reason) {
         if (!this.level().isClientSide() && this.isDeadOrDying()) {
 
@@ -102,6 +102,16 @@ public class PrinceSlimeEntity extends Slime {
             int amount = 5 + this.random.nextInt(6);     // 5-10
             this.spawnAtLocation((ServerLevel) this.level(),
                     new ItemStack(FirstMod.SUPER_SLIME, amount));
+
+            // 5% chance another Prince takes its place
+            if (this.random.nextFloat() < 0.05f) {
+                PrinceSlimeEntity respawn = FirstMod.PRINCE_SLIME.create(
+                        this.level(), EntitySpawnReason.TRIGGERED);
+                if (respawn != null) {
+                    respawn.snapTo(this.getX(), this.getY() + 1.0, this.getZ(), 0.0F, 0.0F);
+                    this.level().addFreshEntity(respawn);
+                }
+            }
         }
         super.remove(reason);
     }

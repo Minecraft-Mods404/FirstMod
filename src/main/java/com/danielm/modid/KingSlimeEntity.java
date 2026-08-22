@@ -114,13 +114,13 @@ public class KingSlimeEntity extends Slime {
             }
 
             // 10% chance of 1 slime grenade
-            if (this.random.nextFloat() < 0.10f) {
+            if (this.random.nextFloat() < 1.00f) {
                 this.spawnAtLocation(serverLevel,
                         new ItemStack(FirstMod.SLIME_GRENADE, 1));
             }
 
             // 1% chance of 1 mega slime grenade
-            if (this.random.nextFloat() < 0.01f) {
+            if (this.random.nextFloat() < 1.00f) {
                 this.spawnAtLocation(serverLevel,
                         new ItemStack(FirstMod.SLIME_MEGA_GRENADE, 1));
             }

@@ -41,6 +41,8 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.phys.Vec3;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -132,6 +134,14 @@ public class FirstMod implements ModInitializer {
 			.rarity(Rarity.RARE)
 	);
 
+	public static final ResourceKey<Item> NETHER_BATTERY_KEY = ResourceKey.create(
+			Registries.ITEM, id("nether_battery"));
+
+	public static final Item NETHER_BATTERY = new Item(new Item.Properties()
+			.setId(NETHER_BATTERY_KEY)
+			.stacksTo(64)
+	);
+
 	public static final ResourceKey<Item> SLIME_SWORD_KEY = ResourceKey.create(
 			Registries.ITEM, id("slime_sword"));
 
@@ -204,6 +214,28 @@ public class FirstMod implements ModInitializer {
 							EquipmentSlotGroup.MAINHAND)
 					.add(Attributes.ATTACK_SPEED,
 							new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, -3.0,
+									AttributeModifier.Operation.ADD_VALUE),
+							EquipmentSlotGroup.MAINHAND)
+					.build())
+	);
+
+		public static final ResourceKey<Item> NETHER_SCYTHE_KEY = ResourceKey.create(
+			Registries.ITEM, id("nether_scythe"));
+
+	public static final Item NETHER_SCYTHE = new NetherScytheItem(new Item.Properties()
+			.setId(NETHER_SCYTHE_KEY)
+			.sword(SLIME_TOOL_MATERIAL, 2048f, -3.2f)
+			.attributes(ItemAttributeModifiers.builder()
+					.add(Attributes.ATTACK_DAMAGE,
+							new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, 2048.0,
+									AttributeModifier.Operation.ADD_VALUE),
+							EquipmentSlotGroup.MAINHAND)
+					.add(Attributes.ATTACK_SPEED,
+							new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, -3.2,
+									AttributeModifier.Operation.ADD_VALUE),
+							EquipmentSlotGroup.MAINHAND)
+					.add(Attributes.ENTITY_INTERACTION_RANGE,
+							new AttributeModifier(id("nether_scythe_reach"), 4.0,
 									AttributeModifier.Operation.ADD_VALUE),
 							EquipmentSlotGroup.MAINHAND)
 					.build())
@@ -365,6 +397,11 @@ public class FirstMod implements ModInitializer {
 
 	public static EntityType<KingSlimeEntity> KING_SLIME;
 
+		public static final ResourceKey<EntityType<?>> EXPLOSIVE_SLIME_CUBE_KEY =
+			ResourceKey.create(Registries.ENTITY_TYPE, id("explosive_slime_cube"));
+
+	public static EntityType<ExplosiveSlimeEntity> EXPLOSIVE_SLIME_CUBE;
+
 	/** Tracks each player's downward speed from the previous tick, for the boot bounce. */
 	public static final Map<UUID, Double> LAST_FALL_SPEED = new HashMap<>();
 
@@ -389,12 +426,14 @@ public class FirstMod implements ModInitializer {
 		// Need 1 Super Slime and 1 TNT
 		Registry.register(BuiltInRegistries.ITEM, EXPLOSIVE_SLIME_STICK_KEY, EXPLOSIVE_SLIME_STICK);
 		Registry.register(BuiltInRegistries.ITEM, END_BATTERY_KEY, END_BATTERY);
+		Registry.register(BuiltInRegistries.ITEM, NETHER_BATTERY_KEY, NETHER_BATTERY);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_SWORD_KEY, SLIME_SWORD);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_AXE_KEY, SLIME_AXE);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_PICKAXE_KEY, SLIME_PICKAXE);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_SHOVEL_KEY, SLIME_SHOVEL);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_HOE_KEY, SLIME_HOE);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_SCYTHE_KEY, SLIME_SCYTHE);
+		Registry.register(BuiltInRegistries.ITEM, NETHER_SCYTHE_KEY, NETHER_SCYTHE);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_HELMET_KEY, SLIME_HELMET);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_CHESTPLATE_KEY, SLIME_CHESTPLATE);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_LEGGINGS_KEY, SLIME_LEGGINGS);
@@ -467,6 +506,17 @@ public class FirstMod implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(KING_SLIME, KingSlimeEntity.createAttributes());
 
+				EXPLOSIVE_SLIME_CUBE = Registry.register(
+				BuiltInRegistries.ENTITY_TYPE,
+				EXPLOSIVE_SLIME_CUBE_KEY,
+				EntityType.Builder.<ExplosiveSlimeEntity>of(ExplosiveSlimeEntity::new, MobCategory.MONSTER)
+						.sized(0.52F, 0.52F)
+						.spawnDimensionsScale(4.0F)
+						.clientTrackingRange(8)
+						.build(EXPLOSIVE_SLIME_CUBE_KEY));
+
+		FabricDefaultAttributeRegistry.register(EXPLOSIVE_SLIME_CUBE, ExplosiveSlimeEntity.createAttributes());
+
 		// --- creative tab ---
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, SLIME_TAB_KEY,
 				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
@@ -477,12 +527,14 @@ public class FirstMod implements ModInitializer {
 							output.accept(EXPLOSIVE_SLIME);
                             output.accept(EXPLOSIVE_SLIME_STICK);
 							output.accept(END_BATTERY);
+							output.accept(NETHER_BATTERY);
 							output.accept(SLIME_SWORD);
 							output.accept(SLIME_AXE);
 							output.accept(SLIME_PICKAXE);
 							output.accept(SLIME_SHOVEL);
 							output.accept(SLIME_HOE);
                             output.accept(SLIME_SCYTHE);
+							output.accept(NETHER_SCYTHE);
 							output.accept(SLIME_HELMET);
 							output.accept(SLIME_CHESTPLATE);
 							output.accept(SLIME_LEGGINGS);
@@ -513,10 +565,11 @@ public class FirstMod implements ModInitializer {
 				if (player.onGround() && prevY < -0.1
 						&& player.getItemBySlot(EquipmentSlot.FEET).is(SLIME_ARMOR)
 						&& !player.isShiftKeyDown()) {
-					player.setDeltaMovement(
+										player.setDeltaMovement(new Vec3(
 							player.getDeltaMovement().x,
 							-prevY * 0.8,
-							player.getDeltaMovement().z);
+							player.getDeltaMovement().z));
+					player.hurtMarked = true;
 					player.hurtMarked = true;   // forces the client to accept the new velocity
 				}
 
@@ -533,7 +586,7 @@ public class FirstMod implements ModInitializer {
 					HAD_VERY_STICKY.add(player.getUUID());
 				} else if (HAD_VERY_STICKY.remove(player.getUUID()) && player.isAlive()) {
 					grantAdvancement(server, player, "survive_misfortune", "survived");
-					startSlimeRain(server, 240L);
+					startSlimeRain(server, 24000L);
 				}
 
 
@@ -604,9 +657,14 @@ public class FirstMod implements ModInitializer {
 		CommandRegistrationCallback.EVENT.register((dispatcher, registry, env) -> {
 			dispatcher.register(literal("slimerain")
 					.executes(ctx -> {
-						startSlimeRain(ctx.getSource().getServer(), 240L);
+						startSlimeRain(ctx.getSource().getServer(), 24000L);
 						return 1;
-					}));
+					})
+					.then(literal("stop")
+							.executes(ctx -> {
+								stopSlimeRain(ctx.getSource().getServer());
+								return 1;
+							})));
 		});
 
 	}
@@ -625,7 +683,7 @@ public class FirstMod implements ModInitializer {
 		return count;
 	}
 
-	public static void grantAdvancement(MinecraftServer server, ServerPlayer player, String path, String criterion) {
+		public static void grantAdvancement(MinecraftServer server, ServerPlayer player, String path, String criterion) {
 		var advancement = server.getAdvancements().get(id(path));
 		if (advancement != null) {
 			player.getAdvancements().award(advancement, criterion);
@@ -643,6 +701,20 @@ public class FirstMod implements ModInitializer {
 		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 			spawnPrinceNear(overworld, player);
 		}
+
+		// 10% chance of a single King Slime
+		if (overworld.getRandom().nextFloat() < 0.10f) {
+			List<ServerPlayer> players = server.getPlayerList().getPlayers();
+			if (!players.isEmpty()) {
+				spawnKingNear(overworld, players.get(0));
+			}
+		}
+	}
+
+	public static void stopSlimeRain(MinecraftServer server) {
+		slimeRainActive = false;
+		slimeRainEndsAt = 0L;
+		server.setWeatherParameters(6000, 0, false, false);
 	}
 
 
@@ -653,11 +725,24 @@ public class FirstMod implements ModInitializer {
 		int y = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z);
 
 		PrinceSlimeEntity prince = PRINCE_SLIME.create(level, EntitySpawnReason.EVENT);
-		LOGGER.info("spawning prince at {} {} {}, created={}", (int) x, y, (int) z, prince != null);
 
 		if (prince != null) {
 			prince.snapTo(x, y + 1, z, 0.0F, 0.0F);
 			level.addFreshEntity(prince);
+		}
+	}
+	
+	public static void spawnKingNear(ServerLevel level, ServerPlayer player) {
+		double angle = level.getRandom().nextDouble() * Math.PI * 2;
+		double x = player.getX() + Math.cos(angle) * 50.0;
+		double z = player.getZ() + Math.sin(angle) * 50.0;
+		int y = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z);
+
+		KingSlimeEntity king = KING_SLIME.create(level, EntitySpawnReason.EVENT);
+
+		if (king != null) {
+			king.snapTo(x, y + 1, z, 0.0F, 0.0F);
+			level.addFreshEntity(king);
 		}
 	}
 
