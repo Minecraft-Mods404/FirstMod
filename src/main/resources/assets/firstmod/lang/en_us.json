@@ -4,6 +4,7 @@
   "item.firstmod.explosive_slime_stick": "Explosive Slime Stick",
   "item.firstmod.end_battery": "End Battery",
   "item.firstmod.nether_battery": "\u00a74Nether Battery",
+  "item.firstmod.explosive_slime_block": "Explosive Slime Block",
 
   "item.firstmod.slime_sword": "Slime Sword",
   "item.firstmod.slime_scythe": "\u00a7cSlime Scythe",
@@ -34,6 +35,7 @@
 
   "entity.firstmod.prince_slime": "Prince Slime",
   "entity.firstmod.king_slime": "King Slime",
+  "entity.firstmod.explosive_slime_cube": "Explosive Slime Cube",
 
   "advancements.firstmod.root.title": "Slime... but Better.",
   "advancements.firstmod.root.description": "Obtain Super Slime",
@@ -56,5 +58,7 @@
   "advancements.firstmod.survive.title": "Surviving Your Demise",
   "advancements.firstmod.survive.description": "Survive a Potion of Slimy Misfortune",
   "advancements.firstmod.rain.title": "So... Very... Gooey...",
-  "advancements.firstmod.rain.description": "Be alive when a slime rain ends"
+  "advancements.firstmod.rain.description": "Be alive when a slime rain ends",
+
+  "block.firstmod.explosive_slime_block": "Explosive Slime Block"
 }

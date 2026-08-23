@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "EEE",
+    "EEE",
+    "EEE"
+  ],
+  "key": {
+    "E": "firstmod:explosive_slime"
+  },
+  "result": {
+    "id": "firstmod:explosive_slime_block",
+    "count": 1
+  }
+}

@@ -20,6 +20,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Unit;
@@ -40,6 +41,7 @@ import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 
@@ -402,6 +404,24 @@ public class FirstMod implements ModInitializer {
 
 	public static EntityType<ExplosiveSlimeEntity> EXPLOSIVE_SLIME_CUBE;
 
+		public static final ResourceKey<Block> EXPLOSIVE_SLIME_BLOCK_KEY =
+			ResourceKey.create(Registries.BLOCK, id("explosive_slime_block"));
+
+	public static final Block EXPLOSIVE_SLIME_BLOCK = new ExplosiveSlimeBlock(
+			BlockBehaviour.Properties.of()
+					.setId(EXPLOSIVE_SLIME_BLOCK_KEY)
+					.instabreak()
+					.sound(SoundType.SLIME_BLOCK)
+	);
+
+	public static final ResourceKey<Item> EXPLOSIVE_SLIME_BLOCK_ITEM_KEY =
+			ResourceKey.create(Registries.ITEM, id("explosive_slime_block"));
+
+	public static final Item EXPLOSIVE_SLIME_BLOCK_ITEM = new BlockItem(
+			EXPLOSIVE_SLIME_BLOCK,
+			new Item.Properties().setId(EXPLOSIVE_SLIME_BLOCK_ITEM_KEY)
+	);
+
 	/** Tracks each player's downward speed from the previous tick, for the boot bounce. */
 	public static final Map<UUID, Double> LAST_FALL_SPEED = new HashMap<>();
 
@@ -441,6 +461,8 @@ public class FirstMod implements ModInitializer {
 		Registry.register(BuiltInRegistries.ITEM, SLIME_HORSE_ARMOR_KEY, SLIME_HORSE_ARMOR);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_GRENADE_KEY, SLIME_GRENADE);
 		Registry.register(BuiltInRegistries.ITEM, SLIME_MEGA_GRENADE_KEY, SLIME_MEGA_GRENADE);
+		Registry.register(BuiltInRegistries.BLOCK, EXPLOSIVE_SLIME_BLOCK_KEY, EXPLOSIVE_SLIME_BLOCK);
+		Registry.register(BuiltInRegistries.ITEM, EXPLOSIVE_SLIME_BLOCK_ITEM_KEY, EXPLOSIVE_SLIME_BLOCK_ITEM);
 
 		// --- grenade entity ---
 		SLIME_GRENADE_ENTITY = Registry.register(
@@ -542,6 +564,7 @@ public class FirstMod implements ModInitializer {
 							output.accept(SLIME_HORSE_ARMOR);
 							output.accept(SLIME_GRENADE);
 							output.accept(SLIME_MEGA_GRENADE);
+							output.accept(EXPLOSIVE_SLIME_BLOCK_ITEM);
 						})
 						.build());
 

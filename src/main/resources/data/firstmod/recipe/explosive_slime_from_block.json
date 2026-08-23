@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": ["firstmod:explosive_slime_block"],
+  "result": {
+    "id": "firstmod:explosive_slime",
+    "count": 9
+  }
+}
