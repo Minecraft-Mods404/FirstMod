@@ -1,0 +1,24 @@
+{
+  "type": "firstmod:slime",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "layers": [
+        {
+          "block": "firstmod:explosive_slime_block",
+          "height": 1
+        },
+        {
+          "block": "minecraft:slime_block",
+          "height": 5
+        }
+      ],
+      "biome": "minecraft:plains",
+      "features": false,
+      "lakes": true,
+      "structure_overrides": [
+        "minecraft:villages"
+      ]
+    }
+  }
+}

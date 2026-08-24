@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [" E ", "EEE", " E "],
+  "key": { "E": "minecraft:end_crystal" },
+  "result": { "id": "firstmod:end_pearl", "count": 1 }
+}

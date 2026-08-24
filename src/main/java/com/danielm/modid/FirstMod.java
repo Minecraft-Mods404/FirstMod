@@ -422,6 +422,37 @@ public class FirstMod implements ModInitializer {
 			new Item.Properties().setId(EXPLOSIVE_SLIME_BLOCK_ITEM_KEY)
 	);
 
+	public static final ResourceKey<Level> SLIME_DIMENSION =
+			ResourceKey.create(Registries.DIMENSION, id("slime"));
+
+	public static final ResourceKey<Item> SLIME_PEARL_KEY = ResourceKey.create(
+			Registries.ITEM, id("slime_pearl"));
+
+	public static final Item SLIME_PEARL = new TeleporterPearlItem(
+			new Item.Properties().setId(SLIME_PEARL_KEY).stacksTo(16),
+			SLIME_DIMENSION);
+
+	public static final ResourceKey<Item> OVERWORLD_PEARL_KEY = ResourceKey.create(
+			Registries.ITEM, id("overworld_pearl"));
+
+	public static final Item OVERWORLD_PEARL = new TeleporterPearlItem(
+			new Item.Properties().setId(OVERWORLD_PEARL_KEY).stacksTo(16),
+			Level.OVERWORLD);
+
+	public static final ResourceKey<Item> NETHER_PEARL_KEY = ResourceKey.create(
+			Registries.ITEM, id("nether_pearl"));
+
+	public static final Item NETHER_PEARL = new TeleporterPearlItem(
+			new Item.Properties().setId(NETHER_PEARL_KEY).stacksTo(16),
+			Level.NETHER);
+
+	public static final ResourceKey<Item> END_PEARL_KEY = ResourceKey.create(
+			Registries.ITEM, id("end_pearl"));
+
+	public static final Item END_PEARL = new TeleporterPearlItem(
+			new Item.Properties().setId(END_PEARL_KEY).stacksTo(16),
+			Level.END);
+
 	/** Tracks each player's downward speed from the previous tick, for the boot bounce. */
 	public static final Map<UUID, Double> LAST_FALL_SPEED = new HashMap<>();
 
@@ -463,6 +494,10 @@ public class FirstMod implements ModInitializer {
 		Registry.register(BuiltInRegistries.ITEM, SLIME_MEGA_GRENADE_KEY, SLIME_MEGA_GRENADE);
 		Registry.register(BuiltInRegistries.BLOCK, EXPLOSIVE_SLIME_BLOCK_KEY, EXPLOSIVE_SLIME_BLOCK);
 		Registry.register(BuiltInRegistries.ITEM, EXPLOSIVE_SLIME_BLOCK_ITEM_KEY, EXPLOSIVE_SLIME_BLOCK_ITEM);
+		Registry.register(BuiltInRegistries.ITEM, SLIME_PEARL_KEY, SLIME_PEARL);
+		Registry.register(BuiltInRegistries.ITEM, OVERWORLD_PEARL_KEY, OVERWORLD_PEARL);
+		Registry.register(BuiltInRegistries.ITEM, NETHER_PEARL_KEY, NETHER_PEARL);
+		Registry.register(BuiltInRegistries.ITEM, END_PEARL_KEY, END_PEARL);
 
 		// --- grenade entity ---
 		SLIME_GRENADE_ENTITY = Registry.register(
@@ -565,6 +600,10 @@ public class FirstMod implements ModInitializer {
 							output.accept(SLIME_GRENADE);
 							output.accept(SLIME_MEGA_GRENADE);
 							output.accept(EXPLOSIVE_SLIME_BLOCK_ITEM);
+							output.accept(SLIME_PEARL);
+							output.accept(OVERWORLD_PEARL);
+							output.accept(NETHER_PEARL);
+							output.accept(END_PEARL);
 						})
 						.build());
 
