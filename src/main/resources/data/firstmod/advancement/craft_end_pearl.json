@@ -1,0 +1,19 @@
+{
+  "parent": "firstmod:slime_root",
+  "display": {
+    "icon": { "id": "firstmod:end_pearl" },
+    "title": { "translate": "advancements.firstmod.craft_end_pearl.title" },
+    "description": { "translate": "advancements.firstmod.craft_end_pearl.description" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "firstmod:end_pearl" }
+    }
+  },
+  "requirements": [["crafted"]]
+}

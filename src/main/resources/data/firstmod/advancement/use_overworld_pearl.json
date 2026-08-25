@@ -1,0 +1,16 @@
+{
+  "parent": "firstmod:craft_overworld_pearl",
+  "display": {
+    "icon": { "id": "firstmod:overworld_pearl" },
+    "title": { "translate": "advancements.firstmod.use_overworld_pearl.title" },
+    "description": { "translate": "advancements.firstmod.use_overworld_pearl.description" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "used": { "trigger": "minecraft:impossible" }
+  },
+  "requirements": [["used"]]
+}

@@ -8,18 +8,24 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.portal.TeleportTransition;
-import net.minecraft.world.phys.Vec3;
 
 public class TeleporterPearlItem extends Item {
 
     /** Which dimension this pearl sends you to. */
     private final ResourceKey<Level> target;
 
-    public TeleporterPearlItem(final Item.Properties properties, final ResourceKey<Level> target) {
+    /** Advancement path granted when this pearl is used, e.g. "use_slime_pearl". */
+    private final String advancementPath;
+
+    public TeleporterPearlItem(final Item.Properties properties,
+                               final ResourceKey<Level> target,
+                               final String advancementPath) {
         super(properties);
         this.target = target;
+        this.advancementPath = advancementPath;
     }
 
     @Override
@@ -37,13 +43,16 @@ public class TeleporterPearlItem extends Item {
             return InteractionResult.FAIL;
         }
 
+        // let the game pick a safe landing spot rather than a fixed height
         serverPlayer.teleport(new TeleportTransition(
                 destination,
-                new Vec3(serverPlayer.getX(), 5.0, serverPlayer.getZ()),
+                new Vec3(serverPlayer.getX(), 100.0, serverPlayer.getZ()),
                 Vec3.ZERO,
                 serverPlayer.getYRot(),
                 serverPlayer.getXRot(),
                 TeleportTransition.PLAY_PORTAL_SOUND.then(TeleportTransition.PLACE_PORTAL_TICKET)));
+
+        FirstMod.grantAdvancement(serverLevel.getServer(), serverPlayer, this.advancementPath, "used");
 
         ItemStack stack = player.getItemInHand(hand);
         stack.consume(1, player);

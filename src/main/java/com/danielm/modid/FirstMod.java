@@ -453,6 +453,24 @@ public class FirstMod implements ModInitializer {
 			new Item.Properties().setId(END_PEARL_KEY).stacksTo(16),
 			Level.END);
 
+		public static final ResourceKey<Item> KILL_STICK_KEY = ResourceKey.create(
+			Registries.ITEM, id("kill_stick"));
+
+	public static final Item KILL_STICK = new KillStickItem(new Item.Properties()
+			.setId(KILL_STICK_KEY)
+			.stacksTo(1)
+			.rarity(Rarity.EPIC)
+	);
+
+	public static final ResourceKey<Item> RAGE_STICK_KEY = ResourceKey.create(
+			Registries.ITEM, id("rage_stick"));
+
+	public static final Item RAGE_STICK = new RageStickItem(new Item.Properties()
+			.setId(RAGE_STICK_KEY)
+			.stacksTo(1)
+			.rarity(Rarity.EPIC)
+	);
+
 	/** Tracks each player's downward speed from the previous tick, for the boot bounce. */
 	public static final Map<UUID, Double> LAST_FALL_SPEED = new HashMap<>();
 
@@ -498,6 +516,8 @@ public class FirstMod implements ModInitializer {
 		Registry.register(BuiltInRegistries.ITEM, OVERWORLD_PEARL_KEY, OVERWORLD_PEARL);
 		Registry.register(BuiltInRegistries.ITEM, NETHER_PEARL_KEY, NETHER_PEARL);
 		Registry.register(BuiltInRegistries.ITEM, END_PEARL_KEY, END_PEARL);
+		Registry.register(BuiltInRegistries.ITEM, KILL_STICK_KEY, KILL_STICK);
+		Registry.register(BuiltInRegistries.ITEM, RAGE_STICK_KEY, RAGE_STICK);
 
 		// --- grenade entity ---
 		SLIME_GRENADE_ENTITY = Registry.register(
