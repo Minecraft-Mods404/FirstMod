@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "slimemod:block/explosive_slime_block"
+    }
+}

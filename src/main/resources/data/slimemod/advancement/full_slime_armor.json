@@ -1,0 +1,33 @@
+{
+  "parent": "slimemod:slime_root",
+  "display": {
+    "icon": { "id": "slimemod:slime_chestplate" },
+    "title": { "translate": "advancements.slimemod.armor.title" },
+    "description": { "translate": "advancements.slimemod.armor.description" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "wearing_set": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "head": { "items": "slimemod:slime_helmet" },
+                "chest": { "items": "slimemod:slime_chestplate" },
+                "legs": { "items": "slimemod:slime_leggings" },
+                "feet": { "items": "slimemod:slime_boots" }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["wearing_set"]]
+}

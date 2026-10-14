@@ -1,34 +1,27 @@
 {
 	"schemaVersion": 1,
-	"id": "firstmod",
+	"id": "slimemod",
 	"version": "${version}",
-	"name": "FirstMod",
+	"name": "Super Slime Mod",
 	"description": "So much SLIME!",
 	"authors": [
-		"Me!"
+		"BlackEars404"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Minecraft-Mods404/FirstMod",
+		"sources": "https://github.com/Minecraft-Mods404/FirstMod"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/firstmod/icon.png",
+	"license": "MIT",
+	"icon": "assets/slimemod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.danielm.modid.FirstMod"
+			"com.danielm.modid.SlimeMod"
 		],
 		"client": [
-			"com.danielm.modid.client.FirstModClient"
+			"com.danielm.modid.client.SlimeModClient"
 		]
 	},
-	"mixins": [
-		"firstmod.mixins.json",
-		{
-			"config": "firstmod.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
 		"minecraft": "~26.2",

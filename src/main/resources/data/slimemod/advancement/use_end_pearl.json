@@ -1,0 +1,16 @@
+{
+  "parent": "slimemod:craft_end_pearl",
+  "display": {
+    "icon": { "id": "slimemod:end_pearl" },
+    "title": { "translate": "advancements.slimemod.use_end_pearl.title" },
+    "description": { "translate": "advancements.slimemod.use_end_pearl.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "used": { "trigger": "minecraft:impossible" }
+  },
+  "requirements": [["used"]]
+}

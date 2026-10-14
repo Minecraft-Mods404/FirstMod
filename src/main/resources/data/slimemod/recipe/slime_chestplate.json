@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "S S",
+    "SES",
+    "SSS"
+  ],
+  "key": {
+    "S": "slimemod:super_slime",
+    "E": "minecraft:elytra"
+  },
+  "result": {
+    "id": "slimemod:slime_chestplate",
+    "count": 1
+  }
+}

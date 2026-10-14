@@ -1,0 +1,19 @@
+{
+  "parent": "slimemod:slime_root",
+  "display": {
+    "icon": { "id": "slimemod:overworld_pearl" },
+    "title": { "translate": "advancements.slimemod.craft_overworld_pearl.title" },
+    "description": { "translate": "advancements.slimemod.craft_overworld_pearl.description" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "slimemod:overworld_pearl" }
+    }
+  },
+  "requirements": [["crafted"]]
+}

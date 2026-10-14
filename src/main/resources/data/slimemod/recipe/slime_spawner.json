@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ISI",
+    "IMI",
+    "III"
+  ],
+  "key": {
+    "I": "minecraft:iron_block",
+    "S": "minecraft:slime_block",
+    "M": "minecraft:spawner"
+  },
+  "result": {
+    "id": "slimemod:slime_spawner",
+    "count": 1
+  }
+}

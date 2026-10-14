@@ -28,17 +28,17 @@ public class SlimeGrenadeEntity extends ThrowableItemProjectile {
 
     /** Used when a player throws it. */
     public SlimeGrenadeEntity(final Level level, final LivingEntity thrower, final ItemStack stack) {
-        super(FirstMod.SLIME_GRENADE_ENTITY, thrower, level, stack);
+        super(SlimeMod.SLIME_GRENADE_ENTITY, thrower, level, stack);
     }
 
     /** Used by dispensers. */
     public SlimeGrenadeEntity(final Level level, final double x, final double y, final double z, final ItemStack stack) {
-        super(FirstMod.SLIME_GRENADE_ENTITY, x, y, z, level, stack);
+        super(SlimeMod.SLIME_GRENADE_ENTITY, x, y, z, level, stack);
     }
 
     @Override
     protected Item getDefaultItem() {
-        return FirstMod.SLIME_GRENADE;
+        return SlimeMod.SLIME_GRENADE;
     }
 
     // ─── impact ───

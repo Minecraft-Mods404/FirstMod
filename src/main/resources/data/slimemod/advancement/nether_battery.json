@@ -1,0 +1,29 @@
+{
+  "parent": "slimemod:slime_root",
+  "display": {
+    "icon": {
+      "id": "slimemod:nether_battery"
+    },
+    "title": {
+      "translate": "advancements.slimemod.nether_battery.title"
+    },
+    "description": {
+      "translate": "advancements.slimemod.nether_battery.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "slimemod:nether_battery"
+      }
+    }
+  },
+  "requirements": [
+    ["crafted"]
+  ]
+}

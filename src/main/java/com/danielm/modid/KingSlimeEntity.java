@@ -25,7 +25,7 @@ public class KingSlimeEntity extends Slime {
 
     private final ServerBossEvent bossEvent = new ServerBossEvent(
             UUID.randomUUID(),
-            Component.translatable("entity.firstmod.king_slime"),
+            Component.translatable("entity.slimemod.king_slime"),
             BossEvent.BossBarColor.RED,
             BossEvent.BossBarOverlay.PROGRESS);
 
@@ -90,7 +90,7 @@ public class KingSlimeEntity extends Slime {
 
             // 3 Prince Slimes
             for (int i = 0; i < 3; i++) {
-                PrinceSlimeEntity child = FirstMod.PRINCE_SLIME.create(
+                PrinceSlimeEntity child = SlimeMod.PRINCE_SLIME.create(
                         this.level(), EntitySpawnReason.TRIGGERED);
                 if (child != null) {
                     child.snapTo(this.getX() + (i - 1) * 3.0,
@@ -104,25 +104,25 @@ public class KingSlimeEntity extends Slime {
             // 10-50 super slime
             int superSlime = 10 + this.random.nextInt(41);
             this.spawnAtLocation(serverLevel,
-                    new ItemStack(FirstMod.SUPER_SLIME, superSlime));
+                    new ItemStack(SlimeMod.SUPER_SLIME, superSlime));
 
             // 0-10 explosive slime
             int explosive = this.random.nextInt(11);
             if (explosive > 0) {
                 this.spawnAtLocation(serverLevel,
-                        new ItemStack(FirstMod.EXPLOSIVE_SLIME, explosive));
+                        new ItemStack(SlimeMod.EXPLOSIVE_SLIME, explosive));
             }
 
             // 10% chance of 1 slime grenade
-            if (this.random.nextFloat() < 1.00f) {
+            if (this.random.nextFloat() < 0.10f) {
                 this.spawnAtLocation(serverLevel,
-                        new ItemStack(FirstMod.SLIME_GRENADE, 1));
+                        new ItemStack(SlimeMod.SLIME_GRENADE, 1));
             }
 
             // 1% chance of 1 mega slime grenade
-            if (this.random.nextFloat() < 1.00f) {
+            if (this.random.nextFloat() < 0.01f) {
                 this.spawnAtLocation(serverLevel,
-                        new ItemStack(FirstMod.SLIME_MEGA_GRENADE, 1));
+                        new ItemStack(SlimeMod.SLIME_MEGA_GRENADE, 1));
             }
         }
         super.remove(reason);

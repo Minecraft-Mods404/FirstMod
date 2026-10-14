@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [" S ", "SSS", " S "],
+  "key": { "S": "slimemod:super_slime" },
+  "result": { "id": "slimemod:slime_pearl", "count": 1 }
+}

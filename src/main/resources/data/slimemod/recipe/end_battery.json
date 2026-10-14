@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "OIO",
+    "OEO",
+    "OOO"
+  ],
+  "key": {
+    "O": "minecraft:obsidian",
+    "I": "minecraft:iron_block",
+    "E": "minecraft:end_crystal"
+  },
+  "result": {
+    "id": "slimemod:end_battery",
+    "count": 1
+  }
+}

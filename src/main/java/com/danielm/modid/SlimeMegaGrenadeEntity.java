@@ -23,16 +23,16 @@ public class SlimeMegaGrenadeEntity extends ThrowableItemProjectile {
     }
 
     public SlimeMegaGrenadeEntity(final Level level, final LivingEntity thrower, final ItemStack stack) {
-        super(FirstMod.SLIME_MEGA_GRENADE_ENTITY, thrower, level, stack);
+        super(SlimeMod.SLIME_MEGA_GRENADE_ENTITY, thrower, level, stack);
     }
 
     public SlimeMegaGrenadeEntity(final Level level, final double x, final double y, final double z, final ItemStack stack) {
-        super(FirstMod.SLIME_MEGA_GRENADE_ENTITY, x, y, z, level, stack);
+        super(SlimeMod.SLIME_MEGA_GRENADE_ENTITY, x, y, z, level, stack);
     }
 
     @Override
     protected Item getDefaultItem() {
-        return FirstMod.SLIME_MEGA_GRENADE;
+        return SlimeMod.SLIME_MEGA_GRENADE;
     }
 
     @Override

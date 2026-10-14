@@ -1,0 +1,29 @@
+{
+  "parent": "slimemod:end_battery",
+  "display": {
+    "icon": {
+      "id": "slimemod:slime_mega_grenade"
+    },
+    "title": {
+      "translate": "advancements.slimemod.mega_grenade.title"
+    },
+    "description": {
+      "translate": "advancements.slimemod.mega_grenade.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "slimemod:slime_mega_grenade"
+      }
+    }
+  },
+  "requirements": [
+    ["crafted"]
+  ]
+}

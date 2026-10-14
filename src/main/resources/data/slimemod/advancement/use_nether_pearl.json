@@ -1,0 +1,16 @@
+{
+  "parent": "slimemod:craft_nether_pearl",
+  "display": {
+    "icon": { "id": "slimemod:nether_pearl" },
+    "title": { "translate": "advancements.slimemod.use_nether_pearl.title" },
+    "description": { "translate": "advancements.slimemod.use_nether_pearl.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "used": { "trigger": "minecraft:impossible" }
+  },
+  "requirements": [["used"]]
+}

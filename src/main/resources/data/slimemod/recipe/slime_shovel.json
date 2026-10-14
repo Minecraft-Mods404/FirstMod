@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " S ",
+    " T ",
+    " T "
+  ],
+  "key": {
+    "S": "slimemod:super_slime",
+    "T": "minecraft:stick"
+  },
+  "result": {
+    "id": "slimemod:slime_shovel",
+    "count": 1
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "SSS",
+    "S S"
+  ],
+  "key": {
+    "S": "slimemod:super_slime"
+  },
+  "result": {
+    "id": "slimemod:slime_helmet",
+    "count": 1
+  }
+}

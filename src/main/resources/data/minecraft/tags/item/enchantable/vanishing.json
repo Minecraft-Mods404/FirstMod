@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "firstmod:slime_sword",
-    "firstmod:slime_axe"
+    "slimemod:slime_sword",
+    "slimemod:slime_axe"
   ]
 }

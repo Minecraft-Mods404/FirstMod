@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "SCS",
+    "  E",
+    "  T"
+  ],
+  "key": {
+    "S": "slimemod:super_slime",
+
+    "C": "minecraft:sculk_catalyst",
+    "E": "slimemod:end_battery",
+    "T": "slimemod:explosive_slime_stick"
+  },
+  "result": { "id": "slimemod:slime_scythe", "count": 1 }
+}

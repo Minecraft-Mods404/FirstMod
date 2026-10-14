@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": "slimemod:super_slime"
+  },
+  "result": {
+    "id": "minecraft:slime_block",
+    "count": 1
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [" N ", "NNN", " N "],
-  "key": { "N": "minecraft:nether_star" },
-  "result": { "id": "firstmod:nether_pearl", "count": 1 }
-}

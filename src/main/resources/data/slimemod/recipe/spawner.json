@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "III",
+    "IGI",
+    "III"
+  ],
+  "key": {
+    "I": "minecraft:iron_bars",
+    "G": "minecraft:glass"
+  },
+  "result": {
+    "id": "minecraft:spawner",
+    "count": 1
+  }
+}

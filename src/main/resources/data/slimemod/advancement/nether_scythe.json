@@ -1,0 +1,29 @@
+{
+  "parent": "slimemod:nether_battery",
+  "display": {
+    "icon": {
+      "id": "slimemod:nether_scythe"
+    },
+    "title": {
+      "translate": "advancements.slimemod.nether_scythe.title"
+    },
+    "description": {
+      "translate": "advancements.slimemod.nether_scythe.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "slimemod:nether_scythe"
+      }
+    }
+  },
+  "requirements": [
+    ["crafted"]
+  ]
+}

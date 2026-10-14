@@ -8,7 +8,7 @@ import net.minecraft.resources.Identifier;
 public class ExplosiveSlimeRenderer extends SlimeRenderer {
 
     private static final Identifier TEXTURE =
-            Identifier.fromNamespaceAndPath("firstmod", "textures/entity/explosive_slime.png");
+            Identifier.fromNamespaceAndPath("slimemod", "textures/entity/explosive_slime.png");
 
     public ExplosiveSlimeRenderer(final EntityRendererProvider.Context context) {
         super(context);

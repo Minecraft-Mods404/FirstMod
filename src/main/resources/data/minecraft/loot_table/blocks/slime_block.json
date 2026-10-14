@@ -13,7 +13,7 @@
     {
       "rolls": 1,
       "entries": [
-        { "type": "minecraft:item", "name": "firstmod:super_slime" }
+        { "type": "minecraft:item", "name": "slimemod:super_slime" }
       ],
       "conditions": [
         { "condition": "minecraft:random_chance", "chance": 0.5}

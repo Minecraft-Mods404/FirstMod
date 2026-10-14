@@ -1,0 +1,29 @@
+{
+  "parent": "slimemod:slime_root",
+  "display": {
+    "icon": {
+      "id": "slimemod:end_battery"
+    },
+    "title": {
+      "translate": "advancements.slimemod.end_battery.title"
+    },
+    "description": {
+      "translate": "advancements.slimemod.end_battery.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "slimemod:end_battery"
+      }
+    }
+  },
+  "requirements": [
+    ["crafted"]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "slimemod:super_slime",
+    "minecraft:tnt"
+  ],
+  "result": {
+    "id": "slimemod:explosive_slime",
+    "count": 1
+  }
+}

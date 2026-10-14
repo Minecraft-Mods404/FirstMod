@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ECE",
+    "CBC",
+    "ECE"
+  ],
+  "key": {
+    "E": "slimemod:slime_grenade",
+    "C": "slimemod:end_battery",
+    "B": "minecraft:beacon"
+  },
+  "result": {
+    "id": "slimemod:slime_mega_grenade",
+    "count": 4
+  }
+}

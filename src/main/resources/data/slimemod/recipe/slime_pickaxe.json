@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "SSS",
+    " T ",
+    " T "
+  ],
+  "key": {
+    "S": "slimemod:super_slime",
+    "T": "minecraft:stick"
+  },
+  "result": {
+    "id": "slimemod:slime_pickaxe",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "parent": "slimemod:slime_root",
+  "display": {
+    "icon": {
+      "id": "slimemod:slime_grenade"
+    },
+    "title": {
+      "translate": "advancements.slimemod.grenade.title"
+    },
+    "description": {
+      "translate": "advancements.slimemod.grenade.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "slimemod:slime_grenade"
+      }
+    }
+  },
+  "requirements": [
+    ["crafted"]
+  ]
+}

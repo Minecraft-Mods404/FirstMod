@@ -4,7 +4,7 @@
     {
       "rolls": 1,
       "entries": [
-        { "type": "minecraft:item", "name": "firstmod:explosive_slime_block" }
+        { "type": "minecraft:item", "name": "slimemod:explosive_slime_block" }
       ],
       "conditions": [
         { "condition": "minecraft:survives_explosion" }

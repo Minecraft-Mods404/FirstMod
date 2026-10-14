@@ -26,7 +26,7 @@ public class PrinceSlimeEntity extends Slime {
 
     private final ServerBossEvent bossEvent = new ServerBossEvent(
             UUID.randomUUID(),
-            Component.translatable("entity.firstmod.prince_slime"),
+            Component.translatable("entity.slimemod.prince_slime"),
             BossEvent.BossBarColor.GREEN,
             BossEvent.BossBarOverlay.PROGRESS);
 
@@ -101,11 +101,11 @@ public class PrinceSlimeEntity extends Slime {
 
             int amount = 5 + this.random.nextInt(6);     // 5-10
             this.spawnAtLocation((ServerLevel) this.level(),
-                    new ItemStack(FirstMod.SUPER_SLIME, amount));
+                    new ItemStack(SlimeMod.SUPER_SLIME, amount));
 
             // 5% chance another Prince takes its place
             if (this.random.nextFloat() < 0.05f) {
-                PrinceSlimeEntity respawn = FirstMod.PRINCE_SLIME.create(
+                PrinceSlimeEntity respawn = SlimeMod.PRINCE_SLIME.create(
                         this.level(), EntitySpawnReason.TRIGGERED);
                 if (respawn != null) {
                     respawn.snapTo(this.getX(), this.getY() + 1.0, this.getZ(), 0.0F, 0.0F);

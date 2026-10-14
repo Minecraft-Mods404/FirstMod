@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "fuelled=false": { "model": "slimemod:block/slime_spawner" },
+    "fuelled=true":  { "model": "slimemod:block/slime_spawner_on" }
+  }
+}

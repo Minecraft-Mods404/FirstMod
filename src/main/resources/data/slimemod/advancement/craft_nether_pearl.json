@@ -1,0 +1,19 @@
+{
+  "parent": "slimemod:slime_root",
+  "display": {
+    "icon": { "id": "slimemod:nether_pearl" },
+    "title": { "translate": "advancements.slimemod.craft_nether_pearl.title" },
+    "description": { "translate": "advancements.slimemod.craft_nether_pearl.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "slimemod:nether_pearl" }
+    }
+  },
+  "requirements": [["crafted"]]
+}

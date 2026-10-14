@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "ECE",
+    "  N",
+    "  S"
+  ],
+  "key": {
+    "E": "slimemod:explosive_slime",
+
+    "C": "minecraft:sculk_catalyst",
+    "N": "slimemod:nether_battery",
+    "S": "slimemod:explosive_slime_stick"
+  },
+  "result": { "id": "slimemod:nether_scythe", "count": 1 }
+}

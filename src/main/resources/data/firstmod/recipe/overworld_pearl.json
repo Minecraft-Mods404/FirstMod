@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [" D ", "DDD", " D "],
-  "key": { "D": "minecraft:dirt" },
-  "result": { "id": "firstmod:overworld_pearl", "count": 1 }
-}

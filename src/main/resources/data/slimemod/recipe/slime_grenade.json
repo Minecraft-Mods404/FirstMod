@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "EEE",
+    "EBE",
+    "EEE"
+  ],
+  "key": {
+    "E": "slimemod:explosive_slime",
+    "B": "minecraft:slime_block"
+  },
+  "result": {
+    "id": "slimemod:slime_grenade",
+    "count": 8
+  }
+}

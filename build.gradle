@@ -15,7 +15,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"firstmod" {
+		"slimemod" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}

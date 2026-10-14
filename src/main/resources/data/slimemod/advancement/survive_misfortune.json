@@ -1,0 +1,18 @@
+{
+  "parent": "slimemod:slimy_misfortune",
+  "display": {
+    "icon": { "id": "slimemod:super_slime" },
+    "title": { "translate": "advancements.slimemod.survive.title" },
+    "description": { "translate": "advancements.slimemod.survive.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "survived": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [["survived"]]
+}

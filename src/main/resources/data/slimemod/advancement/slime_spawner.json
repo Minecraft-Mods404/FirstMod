@@ -1,0 +1,29 @@
+{
+  "parent": "slimemod:slime_root",
+  "display": {
+    "icon": {
+      "id": "slimemod:slime_spawner"
+    },
+    "title": {
+      "translate": "advancements.slimemod.slime_spawner.title"
+    },
+    "description": {
+      "translate": "advancements.slimemod.slime_spawner.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "slimemod:slime_spawner"
+      }
+    }
+  },
+  "requirements": [
+    ["crafted"]
+  ]
+}

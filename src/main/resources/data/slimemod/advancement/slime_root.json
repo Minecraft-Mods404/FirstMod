@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "id": "slimemod:super_slime" },
+    "title": { "translate": "advancements.slimemod.root.title" },
+    "description": { "translate": "advancements.slimemod.root.description" },
+    "background": "minecraft:block/slime_block",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "got_slime": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [{ "items": "slimemod:super_slime" }] }
+    }
+  }
+}

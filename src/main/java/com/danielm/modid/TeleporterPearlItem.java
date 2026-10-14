@@ -52,7 +52,7 @@ public class TeleporterPearlItem extends Item {
                 serverPlayer.getXRot(),
                 TeleportTransition.PLAY_PORTAL_SOUND.then(TeleportTransition.PLACE_PORTAL_TICKET)));
 
-        FirstMod.grantAdvancement(serverLevel.getServer(), serverPlayer, this.advancementPath, "used");
+        SlimeMod.grantAdvancement(serverLevel.getServer(), serverPlayer, this.advancementPath, "used");
 
         ItemStack stack = player.getItemInHand(hand);
         stack.consume(1, player);
